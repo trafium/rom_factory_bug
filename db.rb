@@ -8,7 +8,7 @@ module Entities
 end
 
 class Foos < ROM::Relation[:sql]
-  UUID = Types::String.default { SecureRandom.uuid }
+  UUID = Types::String.default { 'default' }
 
   schema(:foos, infer: true) do
     attribute :column_with_default, UUID
@@ -16,7 +16,7 @@ class Foos < ROM::Relation[:sql]
 end
 
 class Bars < ROM::Relation[:sql]
-  UUID = Types::String.default { SecureRandom.uuid }
+  UUID = Types::String.default { 'default' }
 
   schema(:bars, infer: true) do
     attribute :column_with_default, UUID
